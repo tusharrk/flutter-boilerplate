@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/app/app.bottomsheets.dart';
-import 'package:flutter_boilerplate/app/app.dialogs.dart';
-import 'package:flutter_boilerplate/app/app.locator.dart';
-import 'package:flutter_boilerplate/core/viewmodels/common_base_viewmodel.dart';
-import 'package:flutter_boilerplate/ui/common/app_strings.dart';
-import 'package:stacked_services/stacked_services.dart';
+import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
+import 'package:flutter_boilerplate/core/common_imports/service_imports.dart';
+import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
 
 class HomeViewModel extends CommonBaseViewmodel {
   final _dialogService = locator<DialogService>();
@@ -16,7 +12,7 @@ class HomeViewModel extends CommonBaseViewmodel {
 
   void incrementCounter() {
     _counter++;
-    debugPrint("storage service---${storage.read("testKey")}");
+    debugPrint("storage service---${storageService.read("testKey")}");
     //  final box = GetStorage();
     rebuildUi();
   }

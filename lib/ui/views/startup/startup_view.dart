@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:stacked/stacked.dart';
-import 'package:flutter_boilerplate/ui/common/ui_helpers.dart';
+import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
+import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
 
 import 'startup_viewmodel.dart';
 

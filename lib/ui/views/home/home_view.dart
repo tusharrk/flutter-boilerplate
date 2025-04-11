@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
-import 'package:flutter_boilerplate/ui/common/app_colors.dart';
-import 'package:flutter_boilerplate/ui/common/ui_helpers.dart';
+import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
+import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
 
 import 'home_viewmodel.dart';
 

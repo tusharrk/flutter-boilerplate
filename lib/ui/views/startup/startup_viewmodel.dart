@@ -1,7 +1,5 @@
-import 'package:flutter_boilerplate/core/viewmodels/common_base_viewmodel.dart';
-import 'package:flutter_boilerplate/app/app.locator.dart';
-import 'package:flutter_boilerplate/app/app.router.dart';
-import 'package:stacked_services/stacked_services.dart';
+import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
+import 'package:flutter_boilerplate/core/common_imports/service_imports.dart';
 
 class StartupViewModel extends CommonBaseViewmodel {
   final _navigationService = locator<NavigationService>();
@@ -12,11 +10,11 @@ class StartupViewModel extends CommonBaseViewmodel {
 
     // This is where you can make decisions on where your app should navigate when
     // you have custom startup logic
-test();
+    test();
     _navigationService.replaceWithHomeView();
   }
 
-  void test(){
-    storage.write('testKey', "test Value");
+  void test() {
+    storageService.write('testKey', "test Value");
   }
 }

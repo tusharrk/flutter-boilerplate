@@ -1,8 +1,6 @@
-import 'package:flutter_boilerplate/app/app.locator.dart';
-import 'package:flutter_boilerplate/services/storage_service.dart';
-import 'package:stacked/stacked.dart';
+import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
+import 'package:flutter_boilerplate/core/common_imports/service_imports.dart';
 
 class CommonBaseViewmodel extends BaseViewModel {
-    final storage = locator<StorageService>();
-    
+  final storageService = locator<StorageService>();
 }
