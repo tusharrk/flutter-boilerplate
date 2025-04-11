@@ -3,6 +3,7 @@ import 'package:flutter_boilerplate/app/app.bottomsheets.dart';
 import 'package:flutter_boilerplate/app/app.dialogs.dart';
 import 'package:flutter_boilerplate/app/app.locator.dart';
 import 'package:flutter_boilerplate/app/app.router.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 Future<void> main() async {
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       initialRoute: Routes.startupView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,

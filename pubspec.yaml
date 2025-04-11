@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get: ^4.7.2
+  get_storage:
   stacked: ^3.4.0
   stacked_services: ^1.1.0
 
