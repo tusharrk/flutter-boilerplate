@@ -1,9 +1,9 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:flutter_boilerplate/app/app.bottomsheets.dart';
 import 'package:flutter_boilerplate/app/app.locator.dart';
-import 'package:flutter_boilerplate/ui/common/app_strings.dart';
+import 'package:flutter_boilerplate/core/constants/app_strings.dart';
 import 'package:flutter_boilerplate/ui/views/home/home_viewmodel.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 
 import '../helpers/test_helpers.dart';
 

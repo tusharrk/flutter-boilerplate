@@ -1,5 +1,6 @@
 import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
+import 'package:flutter_boilerplate/gen/asset/assets.gen.dart';
 
 import 'home_viewmodel.dart';
 
@@ -27,6 +28,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
+                    Assets.images.thumbnailLogo.image(),
                     verticalSpaceMedium,
                     MaterialButton(
                       color: Colors.black,
