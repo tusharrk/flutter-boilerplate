@@ -5,6 +5,7 @@ import 'package:flutter_boilerplate/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:flutter_boilerplate/services/storage_service.dart';
+import 'package:flutter_boilerplate/services/environment_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -18,6 +19,7 @@ import 'package:flutter_boilerplate/services/storage_service.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: StorageService),
+    LazySingleton(classType: EnvironmentService),
 // @stacked-service
   ],
   bottomsheets: [

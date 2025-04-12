@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:flutter_boilerplate/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:flutter_boilerplate/services/storage_service.dart';
+import 'package:flutter_boilerplate/services/environment_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -14,6 +15,7 @@ import 'test_helpers.mocks.dart';
     MockSpec<BottomSheetService>(onMissingStub: OnMissingStub.returnDefault),
     MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
     MockSpec<StorageService>(onMissingStub: OnMissingStub.returnDefault),
+    MockSpec<EnvironmentService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
   ],
 )
@@ -22,6 +24,7 @@ void registerServices() {
   getAndRegisterBottomSheetService();
   getAndRegisterDialogService();
   getAndRegisterStorageService();
+  getAndRegisterEnvironmentService();
 // @stacked-mock-register
 }
 
@@ -83,6 +86,13 @@ MockStorageService getAndRegisterStorageService() {
   _removeRegistrationIfExists<StorageService>();
   final service = MockStorageService();
   locator.registerSingleton<StorageService>(service);
+  return service;
+}
+
+MockEnvironmentService getAndRegisterEnvironmentService() {
+  _removeRegistrationIfExists<EnvironmentService>();
+  final service = MockEnvironmentService();
+  locator.registerSingleton<EnvironmentService>(service);
   return service;
 }
 // @stacked-mock-create

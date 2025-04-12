@@ -12,7 +12,10 @@ class HomeViewModel extends CommonBaseViewmodel {
 
   void incrementCounter() {
     _counter++;
-    debugPrint("storage service---${storageService.read("testKey")}");
+    debugPrint("current environment---$currentEnvironment");
+    debugPrint("current api key---${environmentService.apiKey}");
+    debugPrint("current api url---${environmentService.apiUrl}");
+
     //  final box = GetStorage();
     rebuildUi();
   }

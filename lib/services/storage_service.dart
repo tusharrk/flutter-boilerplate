@@ -3,12 +3,12 @@ import 'package:get_storage/get_storage.dart';
 class StorageService {
   static bool _initialized = false;
   late final GetStorage _box;
-  
+
   // Constructor that initializes GetStorage
   StorageService() {
     _initializeAsync();
   }
-  
+
   // Private async initialization method
   Future<void> _initializeAsync() async {
     if (!_initialized) {
@@ -17,7 +17,7 @@ class StorageService {
     }
     _box = GetStorage();
   }
-  
+
   // Read value (synchronous)
   T? read<T>(String key) {
     // Make sure storage is initialized before reading
@@ -27,7 +27,7 @@ class StorageService {
     }
     return _box.read<T>(key);
   }
-  
+
   // Write value
   Future<void> write(String key, dynamic value) async {
     // Ensure initialization is complete before writing
@@ -36,7 +36,7 @@ class StorageService {
     }
     return _box.write(key, value);
   }
-  
+
   // Remove a key
   Future<void> remove(String key) async {
     if (!_initialized) {
@@ -44,7 +44,7 @@ class StorageService {
     }
     return _box.remove(key);
   }
-  
+
   // Clear all data
   Future<void> erase() async {
     if (!_initialized) {
