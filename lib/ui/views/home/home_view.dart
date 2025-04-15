@@ -9,7 +9,17 @@ class HomeView extends StackedView<HomeViewModel> {
 
   @override
   Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
+    var isDarkMode = true;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -31,14 +41,19 @@ class HomeView extends StackedView<HomeViewModel> {
                     Assets.images.thumbnailLogo.image(),
                     verticalSpaceMedium,
                     MaterialButton(
-                      color: Colors.black,
                       onPressed: viewModel.incrementCounter,
                       child: Text(
                         viewModel.counterLabel,
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(),
                       ),
                     ),
                   ],
+                ),
+                Switch(
+                  value: isDarkMode,
+                  onChanged: (value) {
+                    isDarkMode = value;
+                  },
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +63,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       onPressed: viewModel.showDialog,
                       child: const Text(
                         'Show Dialog',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(),
                       ),
                     ),
                     MaterialButton(
@@ -56,7 +71,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       onPressed: viewModel.showBottomSheet,
                       child: const Text(
                         'Show Bottom Sheet',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(),
                       ),
                     ),
                   ],

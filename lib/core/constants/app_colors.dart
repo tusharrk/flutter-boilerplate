@@ -7,3 +7,32 @@ const Color kcMediumGrey = Color(0xFF474A54);
 const Color kcLightGrey = Color.fromARGB(255, 187, 187, 187);
 const Color kcVeryLightGrey = Color(0xFFE3E3E3);
 const Color kcBackgroundColor = kcDarkGreyColor;
+
+class AppColors {
+  AppColors._(); // Private constructor to prevent instantiation
+
+  // Primary palette colors
+  static const black = Color(0xFF111111);
+  static const darkGray = Color(0xFF2F2F2F);
+  static const offWhite = Color(0xFFF6F6F6);
+  static const white = Color(0xFFFFFFFF);
+
+  // Rich modern blue tones
+  static const deepBlue = Color(0xFF0A2463); // Deep royal blue
+  static const richBlue = Color(0xFF1E56A0); // Rich medium blue
+  static const vibrantBlue = Color(0xFF3A7CA5); // Vibrant blue with teal hints
+  static const lightBlue = Color(0xFF81A4CD); // Soft light blue
+
+  // Variations for UI elements
+  static const mediumGray = Color(0xFF636363);
+  static const lightGray = Color(0xFFD9D9D9);
+
+  // Error colors
+  static const error = Color(0xFFB22222);
+  static const errorLight = Color(0xFFE5C6C6);
+  static const errorDark = Color(0xFF8B0000);
+
+  // Shadow and scrim
+  static const shadow = Color(0xFF000000);
+  static const scrim = Color(0xFF000000);
+}
