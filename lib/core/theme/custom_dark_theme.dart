@@ -10,6 +10,12 @@ final class CustomDarkTheme implements CustomTheme {
         colorScheme: CustomColorScheme.darkColorScheme,
         floatingActionButtonTheme: floatingActionButtonThemeData,
         appBarTheme: appBarTheme,
+        cardTheme: cardThemeData,
+        elevatedButtonTheme: elevatedButtonThemeData,
+        textButtonTheme: textButtonThemeData,
+        textTheme: textTheme,
+        iconTheme: iconThemeData,
+        switchTheme: switchThemeData,
       );
 
   @override
@@ -40,4 +46,15 @@ final class CustomDarkTheme implements CustomTheme {
 
   @override
   TextTheme get textTheme => const TextTheme();
+
+  @override
+  SwitchThemeData get switchThemeData => SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith((states) =>
+            states.contains(WidgetState.selected)
+                ? CustomColorScheme.darkColorScheme.outline
+                : CustomColorScheme.darkColorScheme.outline),
+        trackColor: WidgetStateProperty.resolveWith(
+            (states) => states.contains(WidgetState.selected) ? null : null),
+        trackOutlineWidth: const WidgetStatePropertyAll(0.5),
+      );
 }

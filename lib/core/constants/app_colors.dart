@@ -20,8 +20,10 @@ class AppColors {
   // Rich modern blue tones
   static const deepBlue = Color(0xFF0A2463); // Deep royal blue
   static const richBlue = Color(0xFF1E56A0); // Rich medium blue
-  static const vibrantBlue = Color(0xFF3A7CA5); // Vibrant blue with teal hints
-  static const lightBlue = Color(0xFF81A4CD); // Soft light blue
+  static const vibrantBlue =
+      Color(0xFF1E56A0); // Vibrant blue with teal hints(old:- 0xFF1E56A0)
+  static const lightBlue =
+      Color(0xFF1E56A0); // Soft light blue (old:- 0xFF1E56A0)
 
   // Variations for UI elements
   static const mediumGray = Color(0xFF636363);

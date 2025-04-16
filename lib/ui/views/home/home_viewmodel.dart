@@ -10,6 +10,7 @@ class HomeViewModel extends CommonBaseViewmodel {
   String get counterLabel => 'Counter is: $_counter';
 
   int _counter = 0;
+  bool isDarkMode = false;
 
   void incrementCounter() {
     _counter++;
@@ -25,6 +26,11 @@ class HomeViewModel extends CommonBaseViewmodel {
     debugPrint("current person---$json");
     debugPrint("current person---${Person.fomJson(json).name}");
     //  final box = GetStorage();
+    rebuildUi();
+  }
+
+  void changeDarkMode(bool value) {
+    isDarkMode = value;
     rebuildUi();
   }
 

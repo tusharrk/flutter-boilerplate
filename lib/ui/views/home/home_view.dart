@@ -9,7 +9,6 @@ class HomeView extends StackedView<HomeViewModel> {
 
   @override
   Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
-    var isDarkMode = true;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
@@ -50,11 +49,16 @@ class HomeView extends StackedView<HomeViewModel> {
                   ],
                 ),
                 Switch(
-                  value: isDarkMode,
+                  value: viewModel.isDarkMode,
                   onChanged: (value) {
-                    isDarkMode = value;
+                    viewModel.changeDarkMode(value);
                   },
                 ),
+                Switch.adaptive(
+                    value: viewModel.isDarkMode,
+                    onChanged: (value) {
+                      viewModel.changeDarkMode(value);
+                    }),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

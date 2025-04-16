@@ -11,4 +11,5 @@ abstract class CustomTheme {
   CardThemeData get cardThemeData => const CardThemeData();
   TextTheme get textTheme => const TextTheme();
   IconThemeData get iconThemeData => const IconThemeData();
+  SwitchThemeData get switchThemeData => const SwitchThemeData();
 }
