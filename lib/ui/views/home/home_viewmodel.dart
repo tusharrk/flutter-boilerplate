@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/service_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
@@ -31,6 +32,22 @@ class HomeViewModel extends CommonBaseViewmodel {
 
   void changeDarkMode(bool value) {
     isDarkMode = value;
+    rebuildUi();
+  }
+
+  void changeLocale(BuildContext context) async {
+    var locale = context.locale.toString();
+    debugPrint("current locale---$locale");
+    var newLocale = context.locale;
+    if (locale == 'en_US') {
+      newLocale = Locales.de.locale;
+    } else if (locale == 'de_DE') {
+      newLocale = Locales.hi.locale;
+    } else if (locale == 'hi_IN') {
+      newLocale = Locales.en.locale;
+    }
+    debugPrint("new locale---${newLocale.toString()}");
+    await AppLocalization.updateLanguage(context, newLocale);
     rebuildUi();
   }
 

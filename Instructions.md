@@ -35,3 +35,18 @@ For production: `dart run env_manager.dart prod`
 
 Run release build with this code:-
 `dart run build_release.dart`
+
+==================
+
+⚠️ Note on iOS
+For translation to work on iOS you need to add supported locales to ios/Runner/Info.plist as described here.
+
+Example:
+
+```
+<key>CFBundleLocalizations</key>
+<array>
+<string>en</string>
+<string>nb</string>
+</array>
+```

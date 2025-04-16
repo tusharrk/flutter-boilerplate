@@ -7,6 +7,7 @@ environment:
   sdk: ">=3.0.3 <4.0.0"
 
 dependencies:
+  easy_localization: ^3.0.7+1
   envied: ^1.1.1
   flutter:
     sdk: flutter
@@ -36,6 +37,7 @@ flutter:
     - assets/fonts/
     - assets/lottie/
     - assets/svgs/
+    - assets/translations/
 
 targets:
   $default:

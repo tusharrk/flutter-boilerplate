@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
 import 'package:flutter_boilerplate/gen/asset/assets.gen.dart';
@@ -11,11 +12,14 @@ class HomeView extends StackedView<HomeViewModel> {
   Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Text('home.title'.tr()),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
-            onPressed: () {},
+            onPressed: () {
+              print(context.locale.toString());
+              viewModel.changeLocale(context);
+            },
           ),
         ],
       ),
@@ -30,9 +34,9 @@ class HomeView extends StackedView<HomeViewModel> {
                 verticalSpaceLarge,
                 Column(
                   children: [
-                    const Text(
-                      'Hello, STACKED!',
-                      style: TextStyle(
+                    Text(
+                      'home.title'.tr(),
+                      style: const TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.w900,
                       ),
