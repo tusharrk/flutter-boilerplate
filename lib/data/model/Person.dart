@@ -4,15 +4,28 @@ part 'Person.g.dart';
 
 @JsonSerializable()
 class Person {
-  final String name;
-  final DateTime dateOfRelease;
+  String? mobileNo;
+  String? iPin;
+  String? deviceID;
+  String? firebaseId;
+  String? token;
+  String? otp;
+  bool? isExist;
+  bool? status;
+  int? userId;
 
-  Person({
-    required this.name,
-    required this.dateOfRelease,
-  });
+  Person(
+      {this.mobileNo,
+      this.iPin,
+      this.deviceID,
+      this.firebaseId,
+      this.token,
+      this.otp,
+      this.isExist,
+      this.status,
+      this.userId});
 
-  factory Person.fomJson(Map<String, dynamic> json) => _$PersonFromJson(json);
+  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
 
   Map<String, dynamic> toJson(Person movie) => _$PersonToJson(this);
 }
