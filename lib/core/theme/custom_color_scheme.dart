@@ -1,4 +1,4 @@
-import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/core/constants/app_colors.dart';
 
 /// Project custom colors

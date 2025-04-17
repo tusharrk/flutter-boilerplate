@@ -6,15 +6,14 @@
 import 'dart:async' as _i8;
 import 'dart:ui' as _i9;
 
-import 'package:dio/dio.dart' as _i12;
+import 'package:dio/dio.dart' as _i11;
 import 'package:flutter/material.dart' as _i7;
 import 'package:flutter_boilerplate/core/common_imports/service_imports.dart'
     as _i2;
 import 'package:flutter_boilerplate/core/network/deo_client.dart' as _i3;
 import 'package:flutter_boilerplate/core/network/models/api_response.dart'
     as _i4;
-import 'package:flutter_boilerplate/data/model/Person.dart' as _i11;
-import 'package:flutter_boilerplate/services/user_service.dart' as _i10;
+import 'package:flutter_boilerplate/data/model/Person.dart' as _i10;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i6;
 import 'package:stacked_services/stacked_services.dart' as _i5;
@@ -54,8 +53,8 @@ class _FakeDioClient_1 extends _i1.SmartFake implements _i3.DioClient {
         );
 }
 
-class _FakeApiResponse_2<T1> extends _i1.SmartFake
-    implements _i4.ApiResponse<T1> {
+class _FakeApiResponse_2<T> extends _i1.SmartFake
+    implements _i4.ApiResponse<T> {
   _FakeApiResponse_2(
     Object parent,
     Invocation parentInvocation,
@@ -884,7 +883,7 @@ class MockEnvironmentService extends _i1.Mock
 /// A class which mocks [UserService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockUserService extends _i1.Mock implements _i10.UserService {
+class MockUserService extends _i1.Mock implements _i2.UserService {
   @override
   _i2.StorageService get storageService => (super.noSuchMethod(
         Invocation.getter(#storageService),
@@ -955,24 +954,40 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
       ) as int);
 
   @override
-  _i8.Future<_i11.Person?> register(_i11.Person? user) => (super.noSuchMethod(
+  _i8.Future<_i4.ApiResponse<_i10.Person?>> register(_i10.Person? user) =>
+      (super.noSuchMethod(
         Invocation.method(
           #register,
           [user],
         ),
-        returnValue: _i8.Future<_i11.Person?>.value(),
-        returnValueForMissingStub: _i8.Future<_i11.Person?>.value(),
-      ) as _i8.Future<_i11.Person?>);
+        returnValue: _i8.Future<_i4.ApiResponse<_i10.Person?>>.value(
+            _FakeApiResponse_2<_i10.Person?>(
+          this,
+          Invocation.method(
+            #register,
+            [user],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i8.Future<_i4.ApiResponse<_i10.Person?>>.value(
+                _FakeApiResponse_2<_i10.Person?>(
+          this,
+          Invocation.method(
+            #register,
+            [user],
+          ),
+        )),
+      ) as _i8.Future<_i4.ApiResponse<_i10.Person?>>);
 
   @override
-  _i8.Future<_i11.Person?> getUserProfile() => (super.noSuchMethod(
+  _i8.Future<_i10.Person?> getUserProfile() => (super.noSuchMethod(
         Invocation.method(
           #getUserProfile,
           [],
         ),
-        returnValue: _i8.Future<_i11.Person?>.value(),
-        returnValueForMissingStub: _i8.Future<_i11.Person?>.value(),
-      ) as _i8.Future<_i11.Person?>);
+        returnValue: _i8.Future<_i10.Person?>.value(),
+        returnValueForMissingStub: _i8.Future<_i10.Person?>.value(),
+      ) as _i8.Future<_i10.Person?>);
 
   @override
   _i8.Future<bool> initializeUser() => (super.noSuchMethod(
@@ -989,7 +1004,7 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
     String? endpoint, {
     Map<String, dynamic>? queryParams,
     bool? useCache,
-    _i12.CancelToken? cancelToken,
+    _i11.CancelToken? cancelToken,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -1033,7 +1048,8 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
     String? endpoint, {
     dynamic data,
     Map<String, dynamic>? queryParams,
-    _i12.CancelToken? cancelToken,
+    bool? useCache,
+    _i11.CancelToken? cancelToken,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -1042,6 +1058,7 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
           {
             #data: data,
             #queryParams: queryParams,
+            #useCache: useCache,
             #cancelToken: cancelToken,
           },
         ),
@@ -1053,6 +1070,7 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
             {
               #data: data,
               #queryParams: queryParams,
+              #useCache: useCache,
               #cancelToken: cancelToken,
             },
           ),
@@ -1066,6 +1084,7 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
             {
               #data: data,
               #queryParams: queryParams,
+              #useCache: useCache,
               #cancelToken: cancelToken,
             },
           ),
@@ -1077,7 +1096,7 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
     String? endpoint, {
     dynamic data,
     Map<String, dynamic>? queryParams,
-    _i12.CancelToken? cancelToken,
+    _i11.CancelToken? cancelToken,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -1121,7 +1140,7 @@ class MockUserService extends _i1.Mock implements _i10.UserService {
     String? endpoint, {
     dynamic data,
     Map<String, dynamic>? queryParams,
-    _i12.CancelToken? cancelToken,
+    _i11.CancelToken? cancelToken,
   }) =>
       (super.noSuchMethod(
         Invocation.method(

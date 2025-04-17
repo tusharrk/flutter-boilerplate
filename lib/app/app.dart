@@ -1,12 +1,12 @@
 import 'package:flutter_boilerplate/services/environment_service.dart';
 import 'package:flutter_boilerplate/services/storage_service.dart';
+import 'package:flutter_boilerplate/services/user_service.dart';
 import 'package:flutter_boilerplate/ui/components/bottom_sheets/notice/notice_sheet.dart';
 import 'package:flutter_boilerplate/ui/components/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:flutter_boilerplate/ui/views/home/home_view.dart';
 import 'package:flutter_boilerplate/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:flutter_boilerplate/services/user_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -32,5 +32,6 @@ import 'package:flutter_boilerplate/services/user_service.dart';
     StackedDialog(classType: InfoAlertDialog),
     // @stacked-dialog
   ],
+  logger: StackedLogger(),
 )
 class App {}
