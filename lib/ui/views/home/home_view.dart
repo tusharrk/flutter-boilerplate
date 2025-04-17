@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
 import 'package:flutter_boilerplate/gen/asset/assets.gen.dart';
+import 'package:flutter_boilerplate/ui/components/widgets/custom_image/custom_network_image.dart';
 
 import 'home_viewmodel.dart';
 
@@ -58,11 +59,12 @@ class HomeView extends StackedView<HomeViewModel> {
                     viewModel.changeDarkMode(value);
                   },
                 ),
-                Switch.adaptive(
-                    value: viewModel.isDarkMode,
-                    onChanged: (value) {
-                      viewModel.changeDarkMode(value);
-                    }),
+                const CustomNetworkImage(
+                  imageUrl: 'https://picsum.photos/id/1/140/200',
+                  emptyWidget: Icon(Icons.error),
+                  boxFit: BoxFit.cover,
+                  size: Size(150, 200),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
