@@ -26,8 +26,8 @@ class HomeViewModel extends CommonBaseViewmodel {
     logger.d("debug===============");
     logger.wtf("wtf===============");
 
-    Person person = Person(mobileNo: "1234567890");
-    var json = person.toJson(person);
+    Person person = const Person(mobileNo: "1234567890");
+    var json = person.toJson();
     debugPrint("current person---$json");
     debugPrint("current person---${Person.fromJson(json).mobileNo}");
     //  final box = GetStorage();
@@ -74,7 +74,7 @@ class HomeViewModel extends CommonBaseViewmodel {
   }
 
   void registerUser() {
-    _userService.register(Person(mobileNo: "")).then((response) {
+    _userService.register(const Person(mobileNo: "")).then((response) {
       response.when(success: (data, statusCode, isSuccess) {
         if (data != null) {
           dialogService.showDialog(

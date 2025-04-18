@@ -38,7 +38,7 @@ class UserService extends BaseService {
     final response = await post<Map<String, dynamic>>(
       _registerEndpoint,
       useCache: false,
-      data: user.toJson(user),
+      data: user.toJson(),
     );
 
     return response.when(success: (data, statusCode, isSuccess) {
