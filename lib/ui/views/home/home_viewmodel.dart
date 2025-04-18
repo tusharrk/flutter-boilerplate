@@ -10,6 +10,11 @@ class HomeViewModel extends CommonBaseViewmodel {
 
   String get counterLabel => 'Counter is: $_counter';
 
+  /////////////////////
+  final TextEditingController emailController = TextEditingController();
+
+  ////////////////////
+
   int _counter = 0;
   bool isDarkMode = false;
 
@@ -95,5 +100,17 @@ class HomeViewModel extends CommonBaseViewmodel {
         );
       });
     });
+  }
+
+  String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your email';
+    }
+    final emailRegex =
+        RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+    if (!emailRegex.hasMatch(value)) {
+      return 'Please enter a valid email address';
+    }
+    return null;
   }
 }

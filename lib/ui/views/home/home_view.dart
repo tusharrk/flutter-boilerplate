@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
-import 'package:flutter_boilerplate/gen/asset/assets.gen.dart';
-import 'package:flutter_boilerplate/ui/components/widgets/custom_image/custom_network_image.dart';
+import 'package:flutter_boilerplate/ui/components/widgets/base/app_scaffold.dart';
+import 'package:flutter_boilerplate/ui/components/widgets/base/app_text_field.dart';
 
 import 'home_viewmodel.dart';
 
@@ -12,7 +12,7 @@ class HomeView extends StackedView<HomeViewModel> {
 
   @override
   Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         title: Text('home.title'.tr()),
         actions: [
@@ -43,7 +43,15 @@ class HomeView extends StackedView<HomeViewModel> {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    Assets.images.thumbnailLogo.image(),
+                    //Assets.images.thumbnailLogo.image(),
+                    AppTextField(
+                      label: 'Email',
+                      hintText: 'you@example.com',
+                      controller: viewModel.emailController,
+                      validator: viewModel.validateEmail,
+                      keyboardType: TextInputType.emailAddress,
+                      isFilled: false,
+                    ),
                     verticalSpaceMedium,
                     MaterialButton(
                       onPressed: viewModel.incrementCounter,
@@ -60,12 +68,12 @@ class HomeView extends StackedView<HomeViewModel> {
                     viewModel.changeDarkMode(value);
                   },
                 ),
-                const CustomNetworkImage(
-                  imageUrl: 'https://picsum.photos/id/1/140/200',
-                  emptyWidget: Icon(Icons.error),
-                  boxFit: BoxFit.cover,
-                  size: Size(150, 200),
-                ),
+                // const CustomNetworkImage(
+                //   imageUrl: 'https://picsum.photos/id/1/140/200',
+                //   emptyWidget: Icon(Icons.error),
+                //   boxFit: BoxFit.cover,
+                //   size: Size(150, 200),
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

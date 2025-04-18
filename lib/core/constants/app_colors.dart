@@ -31,7 +31,7 @@ class AppColors {
 
   // Error colors
   static const error = Color(0xFFB22222);
-  static const errorLight = Color(0xFFE5C6C6);
+  static const errorLight = Color(0xFFc96464);
   static const errorDark = Color(0xFF8B0000);
 
   // Shadow and scrim
