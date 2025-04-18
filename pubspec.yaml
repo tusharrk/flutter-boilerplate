@@ -13,6 +13,7 @@ dependencies:
   envied: ^1.1.1
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
   freezed: ^2.5.7
   freezed_annotation: ^2.4.4
   get: ^4.7.2
@@ -39,6 +40,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/icons/
     - assets/images/
     - assets/fonts/
     - assets/lottie/

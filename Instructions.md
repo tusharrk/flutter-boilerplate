@@ -36,6 +36,10 @@ For production: `dart run env_manager.dart prod`
 Run release build with this code:-
 `dart run build_release.dart`
 
+## To Generate Flutter icons
+
+`dart run flutter_launcher_icons`
+
 ==================
 
 ⚠️ Note on iOS
