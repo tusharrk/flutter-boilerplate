@@ -36,13 +36,34 @@ final class CustomDarkTheme implements CustomTheme {
 
   @override
   ElevatedButtonThemeData get elevatedButtonThemeData =>
-      const ElevatedButtonThemeData();
+      ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: CustomColorScheme.darkColorScheme.primary,
+          foregroundColor: CustomColorScheme.darkColorScheme.onPrimary,
+          textStyle: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+      );
 
   @override
   IconThemeData get iconThemeData => const IconThemeData();
 
   @override
-  TextButtonThemeData get textButtonThemeData => const TextButtonThemeData();
+  TextButtonThemeData get textButtonThemeData => TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: CustomColorScheme.darkColorScheme.primary,
+          textStyle: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+      );
+
+  @override
+  OutlinedButtonThemeData get outlinedButtonThemeData =>
+      OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          backgroundColor: CustomColorScheme.darkColorScheme.primary,
+          foregroundColor: CustomColorScheme.darkColorScheme.onPrimary,
+          textStyle: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+      );
 
   @override
   TextTheme get textTheme => const TextTheme();

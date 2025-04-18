@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
+import 'package:flutter_boilerplate/ui/components/widgets/base/app_button.dart';
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_scaffold.dart';
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_text_field.dart';
 
@@ -13,6 +14,7 @@ class HomeView extends StackedView<HomeViewModel> {
   @override
   Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
     return AppScaffold(
+      // backgroundColor: Colors.amber,
       appBar: AppBar(
         title: Text('home.title'.tr()),
         actions: [
@@ -53,6 +55,18 @@ class HomeView extends StackedView<HomeViewModel> {
                       isFilled: false,
                     ),
                     verticalSpaceMedium,
+                    AppButton(
+                      label: 'Login',
+                      onPressed: () => print('Logging in...'),
+                      isBusy: false,
+                      icon: const Icon(Icons.login),
+                      size: AppButtonSize.medium,
+                      fullWidth: false,
+                    ),
+                    OutlinedButton(
+                        onPressed: () {}, child: const Text("adasdas")),
+                    verticalSpaceMedium,
+
                     MaterialButton(
                       onPressed: viewModel.incrementCounter,
                       child: Text(

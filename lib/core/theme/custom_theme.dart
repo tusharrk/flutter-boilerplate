@@ -8,6 +8,8 @@ abstract class CustomTheme {
   ElevatedButtonThemeData get elevatedButtonThemeData =>
       const ElevatedButtonThemeData();
   TextButtonThemeData get textButtonThemeData => const TextButtonThemeData();
+  OutlinedButtonThemeData get outlinedButtonThemeData =>
+      const OutlinedButtonThemeData();
   CardThemeData get cardThemeData => const CardThemeData();
   TextTheme get textTheme => const TextTheme();
   IconThemeData get iconThemeData => const IconThemeData();

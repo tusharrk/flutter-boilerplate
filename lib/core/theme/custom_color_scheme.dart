@@ -48,7 +48,7 @@ final class CustomColorScheme {
     brightness: Brightness.dark,
     // Light Blue as primary for dark theme
     primary: AppColors.lightBlue,
-    onPrimary: AppColors.black,
+    onPrimary: AppColors.white,
     primaryContainer: AppColors.vibrantBlue,
     onPrimaryContainer: AppColors.white,
     // Rich Blue as secondary

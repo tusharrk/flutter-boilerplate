@@ -43,13 +43,34 @@ final class CustomLightTheme implements CustomTheme {
 
   @override
   ElevatedButtonThemeData get elevatedButtonThemeData =>
-      const ElevatedButtonThemeData();
+      ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: CustomColorScheme.lightColorScheme.primary,
+          foregroundColor: CustomColorScheme.lightColorScheme.onPrimary,
+          textStyle: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+      );
 
   @override
   IconThemeData get iconThemeData => const IconThemeData();
 
   @override
-  TextButtonThemeData get textButtonThemeData => const TextButtonThemeData();
+  TextButtonThemeData get textButtonThemeData => TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: CustomColorScheme.lightColorScheme.primary,
+          textStyle: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+      );
+
+  @override
+  OutlinedButtonThemeData get outlinedButtonThemeData =>
+      OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          backgroundColor: CustomColorScheme.lightColorScheme.primary,
+          foregroundColor: CustomColorScheme.lightColorScheme.onPrimary,
+          textStyle: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+      );
 
   @override
   TextTheme get textTheme => GoogleFonts.robotoTextTheme(
