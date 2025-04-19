@@ -7,13 +7,15 @@ import 'package:flutter_boilerplate/ui/views/home/home_view.dart';
 import 'package:flutter_boilerplate/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:flutter_boilerplate/ui/views/example_page/example_page_view.dart';
 // @stacked-import
 
 @StackedApp(
   routes: [
     MaterialRoute(page: HomeView),
     MaterialRoute(page: StartupView),
-    // @stacked-route
+    MaterialRoute(page: ExamplePageView),
+// @stacked-route
   ],
   dependencies: [
     LazySingleton(classType: BottomSheetService),

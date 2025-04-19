@@ -5,6 +5,7 @@ import 'package:logger/logger.dart';
 
 class CommonBaseViewmodel extends BaseViewModel {
   final storageService = locator<StorageService>();
+  final navigationService = locator<NavigationService>();
   final environmentService = locator<EnvironmentService>();
   final dialogService = locator<DialogService>();
   final bottomSheetService = locator<BottomSheetService>();

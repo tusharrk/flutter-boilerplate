@@ -5,7 +5,7 @@ import 'package:flutter_boilerplate/core/common_imports/service_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
 import 'package:flutter_boilerplate/data/model/Person.dart';
 
-class HomeViewModel extends CommonBaseViewmodel {
+class ExamplePageViewModel extends CommonBaseViewmodel {
   final _userService = locator<UserService>();
 
   String get counterLabel => 'Counter is: $_counter';
@@ -17,6 +17,24 @@ class HomeViewModel extends CommonBaseViewmodel {
 
   int _counter = 0;
   bool isDarkMode = false;
+
+  late TabController tabController;
+  void initializeTabController(TickerProvider vsync) {
+    tabController = TabController(length: 3, vsync: vsync);
+
+    // Optional: Listen for tab changes
+    tabController.addListener(() {
+      if (!tabController.indexIsChanging) {
+        // Handle tab changes
+        notifyListeners();
+      }
+    });
+  }
+
+  void onTabChanged(int index) {
+    // Handle tab changes if needed
+    print('Tab changed to: $index');
+  }
 
   void incrementCounter() {
     _counter++;
@@ -61,8 +79,7 @@ class HomeViewModel extends CommonBaseViewmodel {
   }
 
   void showDialog() {
-    // registerUser();
-    navigationService.navigateToExamplePageView();
+    registerUser();
     return;
     // dialogService.showCustomDialog(
     //   variant: DialogType.infoAlert,

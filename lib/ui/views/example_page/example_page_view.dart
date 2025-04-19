@@ -5,15 +5,19 @@ import 'package:flutter_boilerplate/ui/components/widgets/base/app_app_bar.dart'
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_button.dart';
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_scaffold.dart';
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_text_field.dart';
-import 'package:stacked/stacked.dart';
+import 'package:flutter_boilerplate/ui/components/widgets/base/stacked_tabbed_view.dart';
 
-import 'home_viewmodel.dart';
+import 'example_page_viewmodel.dart';
 
-class HomeView extends StackedView<HomeViewModel> {
-  const HomeView({Key? key}) : super(key: key);
+class ExamplePageView extends StackedTabbedView<ExamplePageViewModel> {
+  const ExamplePageView({Key? key}) : super(key: key);
 
   @override
-  Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
+  Widget builder(
+    BuildContext context,
+    ExamplePageViewModel viewModel,
+    Widget? child,
+  ) {
     return AppScaffold(
       appBar: AppAppBar(
         title: 'home.title'.tr(),
@@ -25,6 +29,14 @@ class HomeView extends StackedView<HomeViewModel> {
                 viewModel.changeLocale(context);
               }),
         ],
+        bottom: TabBar(
+          controller: viewModel.tabController,
+          tabs: [
+            Tab(text: 'Tab 1'.tr()),
+            Tab(text: 'Tab 2'.tr()),
+            Tab(text: 'Tab 3'.tr()),
+          ],
+        ),
       ),
       body: SafeArea(
         child: Padding(
@@ -117,5 +129,13 @@ class HomeView extends StackedView<HomeViewModel> {
   }
 
   @override
-  HomeViewModel viewModelBuilder(BuildContext context) => HomeViewModel();
+  ExamplePageViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      ExamplePageViewModel();
+
+  @override
+  void onViewModelReady(
+          ExamplePageViewModel viewModel, TickerProvider tickerProvider) =>
+      viewModel.initializeTabController(tickerProvider);
 }
