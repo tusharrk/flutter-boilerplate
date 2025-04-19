@@ -22,10 +22,14 @@ final class CustomDarkTheme implements CustomTheme {
   final FloatingActionButtonThemeData floatingActionButtonThemeData =
       const FloatingActionButtonThemeData();
   @override
-  AppBarTheme get appBarTheme => const AppBarTheme(
+  AppBarTheme get appBarTheme => AppBarTheme(
+        backgroundColor: CustomColorScheme.darkColorScheme.primary,
         elevation: 0,
         centerTitle: true,
+        iconTheme:
+            IconThemeData(color: CustomColorScheme.darkColorScheme.onPrimary),
         titleTextStyle: TextStyle(
+          color: CustomColorScheme.darkColorScheme.onPrimary,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),

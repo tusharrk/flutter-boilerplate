@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/core/common_imports/common_imports.dart';
 import 'package:flutter_boilerplate/core/common_imports/ui_imports.dart';
+import 'package:flutter_boilerplate/ui/components/widgets/base/app_app_bar.dart';
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_button.dart';
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_scaffold.dart';
 import 'package:flutter_boilerplate/ui/components/widgets/base/app_text_field.dart';
@@ -15,16 +16,23 @@ class HomeView extends StackedView<HomeViewModel> {
   Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
     return AppScaffold(
       // backgroundColor: Colors.amber,
-      appBar: AppBar(
-        title: Text('home.title'.tr()),
+      // appBar: AppBar(
+      //   title: Text('home.title'.tr()),
+      //   actions: [
+      //     IconButton(
+      //       icon: const Icon(Icons.settings),
+      //       onPressed: () {
+      //         print(context.locale.toString());
+      //         viewModel.changeLocale(context);
+      //       },
+      //     ),
+      //   ],
+      // ),
+      appBar: AppAppBar(
+        title: 'home.title'.tr(),
+        showBack: false,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              print(context.locale.toString());
-              viewModel.changeLocale(context);
-            },
-          ),
+          IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
         ],
       ),
       body: SafeArea(
@@ -61,7 +69,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       isBusy: false,
                       icon: const Icon(Icons.login),
                       size: AppButtonSize.medium,
-                      fullWidth: false,
+                      fullWidth: true,
                     ),
                     OutlinedButton(
                         onPressed: () {}, child: const Text("adasdas")),

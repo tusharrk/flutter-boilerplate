@@ -34,7 +34,7 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final scaffold = Scaffold(
       appBar: appBar,
-      body: body,
+      body: safeArea ? SafeArea(child: body) : body,
       backgroundColor: backgroundColor,
       bottomNavigationBar: bottomNavigationBar,
       bottomSheet: bottomSheet,
@@ -51,6 +51,6 @@ class AppScaffold extends StatelessWidget {
           // This will dismiss the keyboard when tapping outside the TextField
           FocusScope.of(context).unfocus();
         },
-        child: safeArea ? SafeArea(child: scaffold) : scaffold);
+        child: scaffold);
   }
 }

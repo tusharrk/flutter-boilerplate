@@ -45,7 +45,7 @@ class AppButton extends StatelessWidget {
     final style = ButtonStyle(
       minimumSize: WidgetStateProperty.all(Size.fromHeight(height)),
       shape: WidgetStateProperty.all(
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
 
@@ -109,6 +109,13 @@ class AppButton extends StatelessWidget {
         break;
     }
 
-    return fullWidth ? SizedBox(width: double.infinity, child: button) : button;
+    return fullWidth
+        ? SizedBox(width: double.infinity, child: button)
+        : Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0.0),
+              child: IntrinsicWidth(child: button),
+            ));
   }
 }
