@@ -100,7 +100,6 @@ class AppButton extends StatelessWidget {
         );
         break;
       case AppButtonType.elevated:
-      default:
         button = ElevatedButton(
           onPressed: shouldDisable ? null : onPressed,
           style: style,
