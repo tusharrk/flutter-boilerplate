@@ -16,6 +16,7 @@ final class CustomDarkTheme implements CustomTheme {
         textTheme: textTheme,
         iconTheme: iconThemeData,
         switchTheme: switchThemeData,
+        tabBarTheme: tabBarTheme,
       );
 
   @override
@@ -81,5 +82,13 @@ final class CustomDarkTheme implements CustomTheme {
         trackColor: WidgetStateProperty.resolveWith(
             (states) => states.contains(WidgetState.selected) ? null : null),
         trackOutlineWidth: const WidgetStatePropertyAll(0.5),
+      );
+
+  @override
+  TabBarTheme get tabBarTheme => TabBarTheme(
+        labelColor: CustomColorScheme.darkColorScheme.onPrimary,
+        // indicator: const UnderlineTabIndicator(
+        //   borderSide: BorderSide(color: Colors.white, width: 2.0),
+        // ),
       );
 }
