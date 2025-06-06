@@ -16,6 +16,7 @@ This boilerplate provides:
 
 ## Table of Contents
 
+- [How To Use This Template](#How-to-Use-This-Template)
 - [Getting Started](#getting-started)
 - [Useful Commands](#useful-commands)
 - [Stacked Architecture Usage](#stacked-architecture-usage)
@@ -30,6 +31,22 @@ This boilerplate provides:
 - [Logging System](#logging-system)
 - [Form Handling and Validation](#form-handling-and-validation)
 - [Asset Management](#asset-management)
+
+## How to Use This Template
+
+### Clone This Template
+
+If using this as a template:
+
+- Click the green **“Use this template”** button on the GitHub repo page
+- Choose **“Create a new repository”**
+- Name your new project repo  
+  Then:
+
+```bash
+git clone https://github.com/yourusername/your_new_project.git
+cd your_new_project
+```
 
 ## Getting Started
 
